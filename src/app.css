@@ -1,0 +1,31 @@
+/* Fish Cards */
+
+.card {
+  align-items: center;
+  margin: 1em;
+}
+
+div.card {
+  border-radius: 25px;
+}
+
+.card-body {
+  width: 100%;
+}
+
+.card-title {
+  text-align: center;
+}
+
+div.fish-data-row.row {
+  justify-content: center;
+}
+
+img.card-img-top {
+  margin-top: 1.5em;
+  height: 64px;
+  width: 64px;
+  border-style: solid;
+  border-radius: 25px;
+  background-color: lightskyblue;
+}

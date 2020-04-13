@@ -1,224 +1,894 @@
-import bitterlingImg from "../assets/fishImages/NH-Icon-bitterling.png";
-import paleChubImg from "../assets/fishImages/palechub.png";
-import crucianCarp from "../assets/fishImages/cruciancarp.png";
-import daceImg from "../assets/fishImages/dace.png";
-import carpImg from "../assets/fishImages/carp.png";
-import koiImg from "../assets/fishImages/Koi.png";
-import goldFishImg from "../assets/fishImages/goldfish.png";
-import popEyedGoldfishImg from "../assets/fishImages/popeyedgoldfish.png";
-import ranchuGoldfishImg from "../assets/fishImages/ranchugoldfish.png";
-import killiFishImg from "../assets/fishImages/killifish.png";
-import crawfishImg from "../assets/fishImages/crawfish.png";
-import softShelledTurtleImg from "../assets/fishImages/softshelledturtle.png";
-import snappingTurtleImg from "../assets/fishImages/snappingturtle.png";
-import tadpoleImg from "../assets/fishImages/tadpole.png";
-import frogImg from "../assets/fishImages/frog.png";
-import freshWaterGobyImg from "../assets/fishImages/freshwatergoby.png";
-import loachImg from "../assets/fishImages/loach.png";
-import catfishImg from "../assets/fishImages/catfish.png";
-import giantSnakeHeadImg from "../assets/fishImages/giantsnakehead.png";
-import bluegillImg from "../assets/fishImages/bluegill.png";
-import yellowPerchImg from "../assets/fishImages/yellowperch.png";
-import blackBassImg from "../assets/fishImages/blackbass.png";
+import bitterlingIMG from "../assets/fishImages/NH-Icon-bitterling.png";
+import paleChubIMG from "../assets/fishImages/palechub.png";
+import crucianCarpIMG from "../assets/fishImages/cruciancarp.png";
+import daceIMG from "../assets/fishImages/dace.png";
+import carpIMG from "../assets/fishImages/carp.png";
+import koiIMG from "../assets/fishImages/Koi.png";
+import goldFishIMG from "../assets/fishImages/goldfish.png";
+import popEyedGoldfishIMG from "../assets/fishImages/popeyedgoldfish.png";
+import ranchuGoldfishIMG from "../assets/fishImages/ranchugoldfish.png";
+import killiFishIMG from "../assets/fishImages/killifish.png";
+import crawfishIMG from "../assets/fishImages/crawfish.png";
+import softShelledTurtleIMG from "../assets/fishImages/softshelledturtle.png";
+import snappingTurtleIMG from "../assets/fishImages/snappingturtle.png";
+import tadpoleIMG from "../assets/fishImages/tadpole.png";
+import frogIMG from "../assets/fishImages/frog.png";
+import freshWaterGobyIMG from "../assets/fishImages/freshwatergoby.png";
+import loachIMG from "../assets/fishImages/loach.png";
+import catfishIMG from "../assets/fishImages/catfish.png";
+import giantSnakeHeadIMG from "../assets/fishImages/giantsnakehead.png";
+import bluegillIMG from "../assets/fishImages/bluegill.png";
+import yellowPerchIMG from "../assets/fishImages/yellowperch.png";
+import blackBassIMG from "../assets/fishImages/blackbass.png";
+import tilapiaIMG from "../assets/fishImages/tilapia.png";
+import pikeIMG from "../assets/fishImages/pike.png";
+import pondSmeltIMG from "../assets/fishImages/pondsmelt.png";
+import sweetfishIMG from "../assets/fishImages/sweetfish.png";
+import cherrySalmonIMG from "../assets/fishImages/cherrysalmon.png";
+import charIMG from "../assets/fishImages/char.png";
+import goldenTroutIMG from "../assets/fishImages/goldentrout.png";
+import stringfishIMG from "../assets/fishImages/stringfish.png";
+import salmonIMG from "../assets/fishImages/salmon.png";
+import kingSalmonIMG from "../assets/fishImages/kingsalmon.png";
+import mittenCrabIMG from "../assets/fishImages/mittencrab.png";
+import guppyIMG from "../assets/fishImages/guppy.png";
+import nibblefishIMG from "../assets/fishImages/nibblefish.png";
+import angelfishIMG from "../assets/fishImages/angelfish.png";
+import bettaIMG from "../assets/fishImages/betta.png";
+import neontetraIMG from "../assets/fishImages/neontetra.png";
+import rainbowfishIMG from "../assets/fishImages/rainbowfish.png";
+import piranhaIMG from "../assets/fishImages/piranha.png";
+import arowanaIMG from "../assets/fishImages/arowana.png";
+import doradoIMG from "../assets/fishImages/dorado.png";
+import garIMG from "../assets/fishImages/gar.png";
+import arapaimaIMG from "../assets/fishImages/arapaima.png";
+import saddledbichirIMG from "../assets/fishImages/saddledbichir.png";
+import sturgeonIMG from "../assets/fishImages/sturgeon.png";
+import seabutterflyIMG from "../assets/fishImages/seabutterfly.png";
+import seahorseIMG from "../assets/fishImages/seahorse.png";
+import clownfishIMG from "../assets/fishImages/clownfish.png";
+import surgeonfishIMG from "../assets/fishImages/surgeonfish.png";
+import butterflyfishIMG from "../assets/fishImages/butterflyfish.png";
+import napoleonfishIMG from "../assets/fishImages/napoleonfish.png";
+import zebraturkeyfishIMG from "../assets/fishImages/zebraturkeyfish.png";
+import blowfishIMG from "../assets/fishImages/blowfish.png";
+import pufferfishIMG from "../assets/fishImages/pufferfish.png";
+import anchovyIMG from "../assets/fishImages/anchovy.png";
+import horsemackerelIMG from "../assets/fishImages/horsemackerel.png";
+import barredknifejawIMG from "../assets/fishImages/barredknifejaw.png";
+import seabassIMG from "../assets/fishImages/seabass.png";
+import redsnapperIMG from "../assets/fishImages/redsnapper.png";
+import dabIMG from "../assets/fishImages/dab.png";
+import oliveflounderIMG from "../assets/fishImages/oliveflounder.png";
+import squidIMG from "../assets/fishImages/squid.png";
+import morayeelIMG from "../assets/fishImages/morayeel.png";
+import ribboneelIMG from "../assets/fishImages/ribboneel.png";
+import tunaIMG from "../assets/fishImages/tuna.png";
+import bluemarlinIMG from "../assets/fishImages/bluemarlin.png";
+import gianttrevallyIMG from "../assets/fishImages/gianttrevally.png";
+import mahimahiIMG from "../assets/fishImages/mahimahi.png";
+import oceanfishIMG from "../assets/fishImages/oceansunfish.png";
+import rayIMG from "../assets/fishImages/ray.png";
+import sawsharkIMG from "../assets/fishImages/sawshark.png";
+import hammerheadsharkIMG from "../assets/fishImages/hammerheadshark.png";
+import greatwhitesharkIMG from "../assets/fishImages/greatwhiteshark.png";
+import whalesharkIMG from "../assets/fishImages/whaleshark.png";
+import suckerfishIMG from "../assets/fishImages/suckerfish.png";
+import footballfishIMG from "../assets/fishImages/footballfish.png";
+import oarfishIMG from "../assets/fishImages/oarfish.png";
+import barreleyeIMG from "../assets/fishImages/barreleye.png";
+import coelacanthIMG from "../assets/fishImages/coelacanth.png";
 
 const fishData = [
   {
-    image: bitterlingImg,
+    image: bitterlingIMG,
     name: "Bitterling",
     price: 900,
     location: "River",
     size: 1,
     time: "All Day",
     month: [5, 6, 7, 8, 9],
+    fin: false,
   },
   {
-    image: paleChubImg,
+    image: paleChubIMG,
     name: "Pale Chub",
     price: 200,
     location: "River",
     size: 1,
     time: "9AM - 4PM",
     month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
   },
   {
-    image: crucianCarp,
+    image: crucianCarpIMG,
     name: "Crucian Carp",
     price: 160,
     location: "River",
     size: 2,
     time: "All Day",
     month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
   },
   {
-    image: daceImg,
+    image: daceIMG,
     name: "Dace",
     price: 240,
     location: "River",
     size: 3,
     time: "4PM to 9PM",
     month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
   },
   {
-    image: carpImg,
+    image: carpIMG,
     name: "Carp",
     price: 300,
     location: "Pond",
     size: 4,
     time: "All Day",
     month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
   },
   {
-    image: koiImg,
+    image: koiIMG,
     name: "Koi",
     price: 4000,
     location: "Pond",
     size: 4,
     time: "4PM to 9PM",
     month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
   },
   {
-    image: goldFishImg,
+    image: goldFishIMG,
     name: "Goldfish",
     price: 1300,
     location: "Pond",
     size: 1,
     time: "All Day",
     month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
   },
   {
-    image: popEyedGoldfishImg,
+    image: popEyedGoldfishIMG,
     name: "Pop-eyed Goldfsh",
     price: 1300,
     location: "Pond",
     size: 1,
     time: "9AM to 4PM",
     month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
   },
   {
-    image: ranchuGoldfishImg,
+    image: ranchuGoldfishIMG,
     name: "Ranchu Goldfish",
     price: 4500,
     location: "Pond",
     size: 2,
     time: "9AM to 4PM",
     month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
   },
   {
-    image: killiFishImg,
+    image: killiFishIMG,
     name: "Killifish",
     price: 300,
     location: "Pond",
     size: 1,
     time: "All Day",
     month: [1, 2, 10, 11, 12],
+    fin: false,
   },
   {
-    image: crawfishImg,
+    image: crawfishIMG,
     name: "Crawfish",
     price: 200,
     location: "Pond",
     size: 2,
     time: "All day",
     month: [1, 2, 3, 10, 11, 12],
+    fin: false,
   },
   {
-    image: softShelledTurtleImg,
+    image: softShelledTurtleIMG,
     name: "Soft-shelled turtle",
     price: 3750,
     location: "River",
     size: 4,
     time: "4PM to 9PM",
     month: [2, 3],
+    fin: false,
   },
   {
-    image: snappingTurtleImg,
+    image: snappingTurtleIMG,
     name: "Snapping Turtle",
     price: 5000,
     location: "River",
     size: 5,
     time: "9PM to 4AM",
     month: [1, 2, 3, 4, 10, 11, 12],
+    fin: false,
   },
   {
-    image: tadpoleImg,
+    image: tadpoleIMG,
     name: "Tadpole",
     price: 100,
     location: "Pond",
     size: 1,
     time: "All Day",
     month: [1, 9, 10, 11, 12],
+    fin: false,
   },
   {
-    image: frogImg,
+    image: frogIMG,
     name: "Frog",
     price: 120,
     location: "Pond",
     size: 2,
     time: "All Day",
     month: [1, 2, 11, 12],
+    fin: false,
   },
   {
-    image: freshWaterGobyImg,
+    image: freshWaterGobyIMG,
     name: "Fresh Water Goby",
     price: 400,
     location: "River",
     size: 2,
     time: "4PM to 9AM",
     month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
   },
   {
-    image: loachImg,
+    image: loachIMG,
     name: "Loach",
     price: 400,
     location: "River",
     size: 2,
     time: "All Day",
     month: [9, 10, 11],
+    fin: false,
   },
   {
-    image: catfishImg,
+    image: catfishIMG,
     name: "Catfish",
     price: 800,
     location: "Pond",
     size: 4,
     time: "4PM to 9AM",
     month: [1, 2, 3, 4, 11, 12],
+    fin: false,
   },
   {
-    image: giantSnakeHeadImg,
+    image: giantSnakeHeadIMG,
     name: "Giant Snakehead",
     price: 5500,
     location: "Pond",
     size: 5,
     time: "9AM to 4PM",
     month: [1, 2, 12],
+    fin: false,
   },
   {
-    image: bluegillImg,
+    image: bluegillIMG,
     name: "Bluegill",
     price: 180,
     location: "River",
     size: 2,
     time: "9AM to 4PM",
     month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
   },
   {
-    image: yellowPerchImg,
+    image: yellowPerchIMG,
     name: "Yellow Perch",
     price: 300,
     location: "River",
     size: 3,
     time: "All Day",
     month: [4, 5, 6, 7, 8, 9],
+    fin: false,
   },
   {
-    image: blackBassImg,
+    image: blackBassIMG,
     name: "Black Bass",
     price: 400,
     location: "River",
     size: 4,
     time: "All Day",
     month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: tilapiaIMG,
+    name: "Tilapia",
+    price: 800,
+    location: "River",
+    size: 3,
+    time: "All Day",
+    month: [1, 2, 3, 4, 12],
+    fin: false,
+  },
+  {
+    image: pikeIMG,
+    name: "Pike",
+    price: 1800,
+    location: "River",
+    size: 5,
+    time: "All Day",
+    month: [3, 4, 5, 6],
+    fin: false,
+  },
+  {
+    image: pondSmeltIMG,
+    name: "Pond Smelt",
+    price: 500,
+    location: "River",
+    size: 2,
+    time: "All Day",
+    month: [6, 7, 8],
+    fin: false,
+  },
+  {
+    image: sweetfishIMG,
+    name: "Sweetfish",
+    price: 900,
+    location: "River",
+    size: 3,
+    time: "All Day",
+    month: [1, 2, 3],
+    fin: false,
+  },
+  {
+    image: cherrySalmonIMG,
+    name: "Chery Salmon",
+    price: 1000,
+    location: "Clifftop River",
+    size: 3,
+    time: "4PM to 9AM",
+    month: [3, 4, 5, 9, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: charIMG,
+    name: "Char",
+    price: 3800,
+    location: "Clifftop River",
+    size: 3,
+    time: "4PM to 9AM",
+    month: [3, 4, 5, 9, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: goldenTroutIMG,
+    name: "Golden Trout",
+    price: 15000,
+    location: "Clifftop River",
+    size: 3,
+    time: "4PM to 9AM",
+    month: [3, 4, 5, 9, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: stringfishIMG,
+    name: "Stringfish",
+    price: 15000,
+    location: "Clifftop River",
+    size: 5,
+    time: "4PM to 9AM",
+    month: [6, 7, 8, 9],
+    fin: false,
+  },
+  {
+    image: salmonIMG,
+    name: "Salmon",
+    price: 700,
+    location: "River Mouth",
+    size: 4,
+    time: "All Day",
+    month: [3],
+    fin: false,
+  },
+  {
+    image: kingSalmonIMG,
+    name: "King Salmon",
+    price: 1500,
+    location: "River Mouth",
+    size: 6,
+    time: "All Day",
+    month: [3],
+    fin: false,
+  },
+  {
+    image: mittenCrabIMG,
+    name: "Mitten Crab",
+    price: 2000,
+    location: "River",
+    size: 2,
+    time: "4PM to 9AM",
+    month: [3, 4, 5],
+    fin: false,
+  },
+  {
+    image: guppyIMG,
+    name: "Guppy",
+    price: 1300,
+    location: "River",
+    size: 1,
+    time: "9AM to 4PM",
+    month: [1, 2, 3, 4, 5, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: nibblefishIMG,
+    name: "Nibble Fish",
+    price: 1500,
+    location: "River",
+    size: 1,
+    time: "9AM to 4PM",
+    month: [1, 2, 3, 11, 12],
+    fin: false,
+  },
+  {
+    image: angelfishIMG,
+    name: "Angelfish",
+    price: 3000,
+    location: "River",
+    size: 2,
+    time: "4PM to 9AM",
+    month: [1, 2, 3, 4, 11, 12],
+    fin: false,
+  },
+  {
+    image: bettaIMG,
+    name: "Betta",
+    price: 2500,
+    location: "River",
+    size: 2,
+    time: "9AM to 4PM",
+    month: [1, 2, 3, 4, 11, 12],
+    fin: false,
+  },
+  {
+    image: neontetraIMG,
+    name: "Neon Tetra",
+    price: 500,
+    location: "River",
+    size: 1,
+    time: "9AM to 4PM",
+    month: [1, 2, 3, 4, 5, 6, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: rainbowfishIMG,
+    name: "Rainbowfish",
+    price: 800,
+    location: "River",
+    size: 1,
+    time: "9AM to 4PM",
+    month: [1, 2, 3, 4, 11, 12],
+    fin: false,
+  },
+  {
+    image: piranhaIMG,
+    name: "Piranha",
+    price: 2500,
+    location: "River",
+    size: 2,
+    time: "9AM to 4PM and 9PM to 4AM",
+    month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: arowanaIMG,
+    name: "Arowana",
+    price: 10000,
+    location: "River",
+    size: 4,
+    time: "4PM to 9AM",
+    month: [1, 2, 3, 12],
+    fin: false,
+  },
+  {
+    image: doradoIMG,
+    name: "Dorado",
+    price: 15000,
+    location: "River",
+    size: 5,
+    time: "4PM to 9AM",
+    month: [1, 2, 3, 12],
+    fin: false,
+  },
+  {
+    image: garIMG,
+    name: "Gar",
+    price: 6000,
+    location: "Pond",
+    size: 6,
+    time: "4PM to 9AM",
+    month: [1, 2, 3, 12],
+    fin: false,
+  },
+  {
+    image: arapaimaIMG,
+    name: "Arapaima",
+    price: 10000,
+    location: "River",
+    size: 6,
+    time: "4PM to 9AM",
+    month: [1, 2, 3, 12],
+    fin: false,
+  },
+  {
+    image: saddledbichirIMG,
+    name: "Saddled Bichir",
+    price: 4000,
+    location: "River",
+    size: 4,
+    time: "9PM to 4AM",
+    month: [1, 2, 3, 12],
+    fin: false,
+  },
+  {
+    image: sturgeonIMG,
+    name: "Sturgeon",
+    price: 10000,
+    location: "River Mouth",
+    size: 6,
+    time: "All Day",
+    month: [3, 4, 5, 6, 7, 8, 9],
+    fin: false,
+  },
+  {
+    image: seabutterflyIMG,
+    name: "Sea Butterfly",
+    price: 1000,
+    location: "Sea",
+    size: 1,
+    time: "All Day",
+    month: [6, 7, 8, 9],
+    fin: false,
+  },
+  {
+    image: seahorseIMG,
+    name: "Sea Horse",
+    price: 1100,
+    location: "Sea",
+    size: 1,
+    time: "All Day",
+    month: [1, 2, 3, 4, 5, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: clownfishIMG,
+    name: "Clown Fish",
+    price: 650,
+    location: "Sea",
+    size: 1,
+    time: "All Day",
+    month: [1, 2, 3, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: surgeonfishIMG,
+    name: "Surgeonfish",
+    price: 1000,
+    location: "Sea",
+    size: 2,
+    time: "All Day",
+    month: [1, 2, 3, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: butterflyfishIMG,
+    name: "Butterfly Fish",
+    price: 1000,
+    location: "Sea",
+    size: 2,
+    time: "All Day",
+    month: [1, 2, 3, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: napoleonfishIMG,
+    name: "Napoleonfish",
+    price: 10000,
+    location: "Sea",
+    size: 6,
+    time: "4AM to 9PM",
+    month: [1, 2],
+    fin: false,
+  },
+  {
+    image: zebraturkeyfishIMG,
+    name: "Zebra Turkeyfish",
+    price: 500,
+    location: "River",
+    size: 3,
+    time: "All Day",
+    month: [1, 2, 3, 4, 5, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: blowfishIMG,
+    name: "Blowfish",
+    price: 5000,
+    location: "Sea",
+    size: 3,
+    time: "6PM to 4AM",
+    month: [5, 6, 7, 8],
+    fin: false,
+  },
+  {
+    image: pufferfishIMG,
+    name: "Puffer Fish",
+    price: 250,
+    location: "Sea",
+    size: 3,
+    time: "All Day",
+    month: [1, 2, 3],
+    fin: false,
+  },
+  {
+    image: blackBassIMG,
+    name: "Black Bass",
+    price: 400,
+    location: "River",
+    size: 4,
+    time: "All Day",
+    month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: anchovyIMG,
+    name: "Anchovy",
+    price: 200,
+    location: "Sea",
+    size: 2,
+    time: "4AM to 9PM",
+    month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: horsemackerelIMG,
+    name: "Horse Mackerel",
+    price: 150,
+    location: "Sea",
+    size: 2,
+    time: "All Day",
+    month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: barredknifejawIMG,
+    name: "Barred Knifejaw",
+    price: 5000,
+    location: "Sea",
+    size: 3,
+    time: "All Day",
+    month: [1, 2, 3, 4, 5, 9, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: seabassIMG,
+    name: "Sea Bass",
+    price: 400,
+    location: "Sea",
+    size: 5,
+    time: "All Day",
+    month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: redsnapperIMG,
+    name: "Red Snapper",
+    price: 3000,
+    location: "Sea",
+    size: 4,
+    time: "All Day",
+    month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: dabIMG,
+    name: "Dab",
+    price: 300,
+    location: "Sea",
+    size: 4,
+    time: "All Day",
+    month: [4, 5, 6, 7, 8, 9, 10],
+    fin: false,
+  },
+  {
+    image: oliveflounderIMG,
+    name: "Olive Flounder",
+    price: 800,
+    location: "Sea",
+    size: 5,
+    time: "All Day",
+    month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: squidIMG,
+    name: "Squid",
+    price: 500,
+    location: "Sea",
+    size: 3,
+    time: "All Day",
+    month: [1, 2, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
+  },
+  {
+    image: morayeelIMG,
+    name: "Moray Eel",
+    price: 2000,
+    location: "Sea",
+    size: 8,
+    time: "All Day",
+    month: [2, 3, 4],
+    fin: false,
+  },
+  {
+    image: ribboneelIMG,
+    name: "Ribbon Eel",
+    price: 600,
+    location: "Sea",
+    size: 8,
+    time: "All Day",
+    month: [1, 2, 3, 4, 12],
+    fin: false,
+  },
+  {
+    image: tunaIMG,
+    name: "Tuna",
+    price: 7000,
+    location: "Pier",
+    size: 6,
+    time: "All Day",
+    month: [5, 6, 7, 8, 9, 10],
+    fin: false,
+  },
+  {
+    image: bluemarlinIMG,
+    name: "Blue Marlin",
+    price: 10000,
+    location: "Pier",
+    size: 6,
+    time: "All Day",
+    month: [1, 2, 3, 5, 6, 7, 8, 9, 10],
+    fin: false,
+  },
+  {
+    image: gianttrevallyIMG,
+    name: "Giant Trevally",
+    price: 4500,
+    location: "Pier",
+    size: 5,
+    time: "All Day",
+    month: [1, 2, 3, 4, 11, 12],
+    fin: false,
+  },
+  {
+    image: mahimahiIMG,
+    name: "Mahi-Mahi",
+    price: 6000,
+    location: "Pier",
+    size: 5,
+    time: "All Day",
+    month: [1, 2, 3, 4, 11, 12],
+    fin: false,
+  },
+  {
+    image: oceanfishIMG,
+    name: "Ocean Sunfish",
+    price: 4000,
+    location: "Sea",
+    size: 7,
+    time: "4AM to 9PM",
+    month: [1, 2, 3],
+    fin: true,
+  },
+  {
+    image: rayIMG,
+    name: "Ray",
+    price: 3000,
+    location: "Sea",
+    size: 5,
+    time: "4AM to 9PM",
+    month: [2, 3, 4, 5],
+    fin: false,
+  },
+  {
+    image: sawsharkIMG,
+    name: "Saw Shark",
+    price: 12000,
+    location: "Sea",
+    size: 7,
+    time: "4PM to 9AM",
+    month: [1, 2, 3, 12],
+    fin: true,
+  },
+  {
+    image: hammerheadsharkIMG,
+    name: "Hammerhead Shark",
+    price: 8000,
+    location: "Sea",
+    size: 7,
+    time: "4PM to 9AM",
+    month: [1, 2, 3, 12],
+    fin: true,
+  },
+  {
+    image: greatwhitesharkIMG,
+    name: "Great White Shark",
+    price: 15000,
+    location: "Sea",
+    size: 7,
+    time: "4PM to 9AM",
+    month: [1, 2, 3, 12],
+    fin: true,
+  },
+  {
+    image: whalesharkIMG,
+    name: "Whale Shark",
+    price: 13000,
+    location: "Sea",
+    size: 7,
+    time: "All Day",
+    month: [1, 2, 3, 12],
+    fin: true,
+  },
+  {
+    image: suckerfishIMG,
+    name: "Suckerfish",
+    price: 1500,
+    location: "Sea",
+    size: 7,
+    time: "All Day",
+    month: [1, 2, 3, 12],
+    fin: true,
+  },
+  {
+    image: footballfishIMG,
+    name: "Football Fish",
+    price: 2500,
+    location: "Sea",
+    size: 4,
+    time: "4PM to 9AM",
+    month: [5, 6, 7, 8, 9],
+    fin: false,
+  },
+  {
+    image: oarfishIMG,
+    name: "Oarfish",
+    price: 9000,
+    location: "Sea",
+    size: 6,
+    time: "All Day",
+    month: [6, 7, 8, 9, 10, 11],
+    fin: false,
+  },
+  {
+    image: barreleyeIMG,
+    name: "Barreleye",
+    price: 15000,
+    location: "Sea",
+    size: 2,
+    time: "9PM to 4AM",
+    month: [1, 2, 3, 12],
+    fin: false,
+  },
+  {
+    image: coelacanthIMG,
+    name: "Coelacanth",
+    price: 15000,
+    location: "Sea",
+    size: 6,
+    time: "All Day",
+    month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    fin: false,
   },
 ];
 
