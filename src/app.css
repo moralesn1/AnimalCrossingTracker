@@ -1,4 +1,11 @@
 /* Fish Cards */
+#root {
+  background-color: #eafcdc;
+}
+
+.hero-image {
+  width: 100%;
+}
 
 .card {
   align-items: center;
@@ -34,4 +41,12 @@ img.card-img-top {
   border-width: 2px;
   border-radius: 25px;
   background-color: lightskyblue;
+}
+
+.footer {
+  text-align: center;
+  height: 100px;
+  margin-top: 50px;
+  padding-top: 3em;
+  padding-bottom: 50px;
 }
