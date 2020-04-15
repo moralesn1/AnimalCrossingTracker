@@ -1,16 +1,27 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row } from "react-bootstrap";
+
+// COMPONENTS
 
 import FishCard from "./FishCard";
 import Header from "./Header";
 import Footer from "./Footer";
 
 //DATA
+
 import fishData from "../data/fishData";
+
 //CSS
+
 import "../app.css";
 
 function App() {
+  const [fishList, setFishList] = useState(["testing"]);
+
+  function handleChange() {
+    return setFishList(["test"]);
+  }
+
   function fishCardMap(item) {
     return (
       <FishCard
@@ -30,6 +41,8 @@ function App() {
     <>
       <Container>
         <Header />
+        <h4 onClick={handleChange}>{fishList}</h4>
+
         <Row className="fish-data-row">{fishData.map(fishCardMap)}</Row>
         <Footer />
       </Container>
