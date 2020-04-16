@@ -38,7 +38,7 @@ function App() {
   }
 
   return (
-    <>
+    <div>
       <Container>
         <Header />
         <h4 onClick={handleChange}>{fishList}</h4>
@@ -46,7 +46,7 @@ function App() {
         <Row className="fish-data-row">{fishData.map(fishCardMap)}</Row>
         <Footer />
       </Container>
-    </>
+    </div>
   );
 }
 

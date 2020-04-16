@@ -631,16 +631,6 @@ const fishData = [
     fin: false,
   },
   {
-    image: blackBassIMG,
-    name: "Black Bass",
-    price: 400,
-    location: "River",
-    size: 4,
-    time: "All Day",
-    month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-    fin: false,
-  },
-  {
     image: anchovyIMG,
     name: "Anchovy",
     price: 200,

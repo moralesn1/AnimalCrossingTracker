@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 export default function Header() {
   return (
     <Container className="header">
-      <img className="hero-image" src={aclogoIMG} />
+      <img className="hero-image" alt="animalcrossing-logo" src={aclogoIMG} />
     </Container>
   );
 }

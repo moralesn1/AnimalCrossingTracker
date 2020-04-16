@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 export default function FishCard(props) {
   return (
@@ -11,21 +11,16 @@ export default function FishCard(props) {
             <h3>{props.name}</h3>
           </Card.Title>
           <Card.Text>
-            <p>
-              <b>Price:</b> {props.price}
-            </p>
-            <p>
-              <b>Location:</b> {props.location}
-            </p>
-            <p>
-              <b>Shadow Size:</b> {props.size}
-            </p>
-            <p>
-              <b>Time: </b> {props.time}
-            </p>
-            <p>
-              <b>Months:</b> {props.month}
-            </p>
+            <b>Price:</b> {props.price}
+            <br />
+            <b>Location:</b> {props.location}
+            <br />
+            <b>Shadow Size:</b> {props.size}
+            <br />
+            <b>Time: </b> {props.time}
+            <br />
+            <b>Months:</b> {props.month}
+            <br />
           </Card.Text>
         </Card.Body>
       </Card>
