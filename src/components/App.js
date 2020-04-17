@@ -4,8 +4,9 @@ import { Container, Row } from "react-bootstrap";
 // COMPONENTS
 
 import FishCard from "./FishCard";
-import Header from "./Header";
 import Footer from "./Footer";
+import Input from "./Input";
+import Header from "./Header";
 
 //DATA
 
@@ -41,9 +42,10 @@ function App() {
     <div>
       <Container>
         <Header />
-        <h4 onClick={handleChange}>{fishList}</h4>
+        <Input />
 
-        <Row className="fish-data-row">{fishData.map(fishCardMap)}</Row>
+        {/* <Row className="fish-data-row">{fishData.map(fishCardMap)}</Row> */}
+
         <Footer />
       </Container>
     </div>
