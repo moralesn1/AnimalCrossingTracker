@@ -1,46 +1,47 @@
 import React, { useState } from "react";
+import fishData from "../data/fishData";
 
 export default function Input() {
-  const [input, setInput] = useState("");
-  const [items, setItems] = useState([]);
+  const [display, setDisplay] = useState(false);
+  const [options, setOptions] = useState(fishData);
+  const [search, setSearch] = useState("");
 
-  function handleChange(event) {
-    const value = event.target.value;
-    setInput(value);
+  function fishList(fish) {
+    setSearch(fish);
+    setDisplay(false);
   }
 
-  function handleClick(event) {
-    event.preventDefault();
-    if (setInput === "") {
-      items.filter();
-    } else {
-      setItems((prev) => {
-        setInput("");
-        return [...prev, input];
-      });
+  function handleChange() {}
 
-      console.log(items);
-    }
+  function handleClick() {
+    setDisplay(!display);
   }
 
-  function clearList() {
-    setItems([]);
-  }
   return (
     <div className="form">
       <input
+        onClick={handleClick}
         onChange={handleChange}
         type="text"
-        placeholder="Search for fish"
+        placeholder="Search for fish..."
         title="Enter a fish name"
-        value={input}
+        value={search}
       />
-      <button type="submit" onClick={handleClick}>
-        Add Fish
-      </button>
+      {display && (
+        <div className="container">
+          {options.map((item, index) => {
+            return (
+              <div onClick={fishList} className="option" key={index}>
+                <span>{item.name}</span>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      <button type="submit">Add Fish</button>
 
-      <button onClick={clearList}>Clear List</button>
-      {items.map((item) => (item === "" ? null : <li>{item}</li>))}
+      <button>Clear List</button>
+      {/* {items.map((item) => (item === "" ? null : <li>{item}</li>))} */}
     </div>
   );
 }
