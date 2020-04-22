@@ -3,18 +3,21 @@ import fishData from "../data/fishData";
 
 export default function Input() {
   const [display, setDisplay] = useState(false);
-  const [options, setOptions] = useState(fishData);
   const [search, setSearch] = useState("");
 
-  function fishList(fish) {
-    setSearch(fish);
+  const fishList = (fish) => {
     setDisplay(false);
-  }
+    console.log(fish);
+  };
 
-  function handleChange() {}
+  function handleChange(event) {
+    const inputValue = event.target.value;
+    setSearch(inputValue);
+  }
 
   function handleClick() {
     setDisplay(!display);
+    setSearch("");
   }
 
   return (
@@ -29,13 +32,16 @@ export default function Input() {
       />
       {display && (
         <div className="container">
-          {options.map((item, index) => {
-            return (
-              <div onClick={fishList} className="option" key={index}>
-                <span>{item.name}</span>
-              </div>
-            );
-          })}
+          {fishData
+            .filter(({ name }) => name.toLocaleLowerCase().indexOf(search) > -1)
+            .map((item, index) => {
+              return (
+                <div onClick={fishList} className="option" key={index}>
+                  <span>{item.name}</span>
+                  <img src={item.image} alt={item.name}></img>
+                </div>
+              );
+            })}
         </div>
       )}
       <button type="submit">Add Fish</button>
