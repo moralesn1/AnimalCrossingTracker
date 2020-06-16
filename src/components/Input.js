@@ -7,25 +7,15 @@ export default function Input() {
 
   function handleChange(event) {
     const inputValue = event.target.value;
+    inputValue === "" ? setDisplay(false) : setDisplay(true);
+
     setSearch(inputValue);
   }
-
-  function toggleDisplay() {}
-  // const queryResult = fishData
-  //   .filter(({ name }) => name.toLocaleLowerCase().indexOf(search) > -1)
-  //   .map((item, index) => {
-  //     return (
-  //       <div className="option" key={index} id={item.name}>
-  //         <span>{item.name}</span>
-  //         <img src={item.image} alt={item.name}></img>
-  //       </div>
-  //     );
-  //   });
 
   function addFish() {}
 
   return (
-    <div className="form">
+    <div className="search-form">
       <input
         onInput={handleChange}
         type="text"
@@ -39,16 +29,17 @@ export default function Input() {
       <button>Clear List</button>
 
       <div className="container">
-        {fishData
-          .filter(({ name }) => name.toLocaleLowerCase().indexOf(search) > -1)
-          .map((item, index) => {
-            return (
-              <div className="option" key={index} id={item.name}>
-                <span>{item.name}</span>
-                <img src={item.image} alt={item.name}></img>
-              </div>
-            );
-          })}
+        {display &&
+          fishData
+            .filter(({ name }) => name.toLocaleLowerCase().indexOf(search) > -1)
+            .map((item, index) => {
+              return (
+                <div className="option" key={index} id={item.name}>
+                  <span>{item.name}</span>
+                  <img src={item.image} alt={item.name}></img>
+                </div>
+              );
+            })}
       </div>
     </div>
   );
