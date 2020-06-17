@@ -10,15 +10,24 @@ import Header from "./Header";
 
 //DATA
 
-import fishData from "../data/fishData";
+// import fishData from "../data/fishData";
 
 //CSS
 
 import "../app.css";
 
 function App() {
-  const [fishList, setFishList] = useState(["testing"]);
+  const [fishList, setFishList] = useState([]);
 
+  function addItem() {
+    // setFishList((prevValue) => {
+    //   return {
+    //     ...prevValue,
+    //     fishList,
+    //   };
+    // });
+    console.log("clicked");
+  }
   function handleChange() {
     return setFishList(["test"]);
   }
@@ -42,8 +51,8 @@ function App() {
     <div>
       <Container>
         <Header />
-        <Input />
-
+        <Input onAdd={addItem} />
+        {fishList}
         {/* <Row className="fish-data-row">{fishData.map(fishCardMap)}</Row> */}
 
         <Footer />
