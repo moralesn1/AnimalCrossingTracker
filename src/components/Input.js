@@ -3,6 +3,7 @@ import fishData from "../data/fishData";
 
 export default function Input(props) {
   const [display, setDisplay] = useState(false);
+
   const [search, setSearch] = useState("");
 
   function handleChange(event) {
@@ -12,9 +13,26 @@ export default function Input(props) {
     setSearch(inputValue);
   }
 
-  function addFish() {
-    props.onAdd();
+  function addFish(name) {
+    props.onAdd(name);
   }
+
+  const fishList = fishData
+    .filter(({ name }) => name.toLocaleLowerCase().indexOf(search) > -1)
+    .map((item, index) => {
+      return (
+        <div
+          className="animal-search-box-option"
+          onClick={() => {
+            addFish(item);
+          }}
+          value={item.name}
+        >
+          <span>{item.name}</span>
+          <img src={item.image} alt={item.name}></img>
+        </div>
+      );
+    });
 
   return (
     <div className="search-form">
@@ -24,11 +42,8 @@ export default function Input(props) {
           type="text"
           placeholder="Search for fish..."
           title="Enter a fish name"
-          value={search}
         />
-        <button type="submit" onClick={addFish}>
-          Add Fish
-        </button>
+        <button type="submit">Add Fish</button>
         <button>Clear List</button>
       </div>
 
@@ -36,22 +51,7 @@ export default function Input(props) {
         className="animal-dropdown-search-box"
         style={{ display: display ? "block" : "none" }}
       >
-        {display &&
-          fishData
-            .filter(({ name }) => name.toLocaleLowerCase().indexOf(search) > -1)
-            .map((item, index) => {
-              return (
-                <div
-                  className="animal-search-box-option"
-                  key={index}
-                  id={item.name}
-                  onClick={addFish}
-                >
-                  <span>{item.name}</span>
-                  <img src={item.image} alt={item.name}></img>
-                </div>
-              );
-            })}
+        {display && fishList}
       </div>
     </div>
   );
