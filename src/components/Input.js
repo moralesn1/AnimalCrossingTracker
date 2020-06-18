@@ -27,6 +27,7 @@ export default function Input(props) {
             addFish(item);
           }}
           value={item.name}
+          key={item.name}
         >
           <span>{item.name}</span>
           <img src={item.image} alt={item.name}></img>

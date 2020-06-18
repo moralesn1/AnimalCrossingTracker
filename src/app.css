@@ -1,6 +1,11 @@
 #root {
   background-color: #eafcdc;
   height: 100vh;
+  margin-bottom: -50px;
+}
+
+.wrapper {
+  background-color: #eafcdc;
 }
 
 .hero-image {
@@ -47,8 +52,7 @@
 
 /* Footer */
 
-.footer,
-.push {
+.footer {
   background-color: white;
   border-style: solid;
   border-width: 2px 0px 0px 0px;
@@ -59,7 +63,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: [footer-height];
+  height: 0;
 }
 
 /* Fish Cards */
@@ -88,6 +92,7 @@ div.card {
 
 div.fish-data-row.row {
   justify-content: center;
+  background-color: #eafcdc;
 }
 
 img.card-img-top {

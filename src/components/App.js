@@ -41,12 +41,11 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="wrapper">
       <Container>
         <Header />
         <Input onAdd={addItem} />
-        <Row className="fish-data-row">{fishList.map(fishCardMap)}</Row>
-
+        <Row className="fish-data-row">{fishList.map(fishCardMap)} </Row>
         <Footer />
       </Container>
     </div>
