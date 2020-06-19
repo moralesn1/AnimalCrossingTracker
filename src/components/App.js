@@ -52,7 +52,6 @@ function App() {
           <Input onAdd={addItem} onClear={clearList} />
 
           <Row className="fish-data-row">{fishList.map(fishCardMap)} </Row>
-          <div className="content-space"></div>
         </Container>
       </div>
       <Footer />

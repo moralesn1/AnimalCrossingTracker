@@ -1,9 +1,7 @@
 #root,
 html {
-  min-height: 100%;
-  margin-bottom: -50px;
+  height: 100%;
   position: relative;
-  padding-bottom: [footer-height];
 }
 
 .wrapper {
@@ -17,9 +15,8 @@ html {
   width: 50%;
 }
 
-.content-space {
-  height: 30vh;
-  position: relative;
+.content {
+  min-height: 80vh;
 }
 
 /* Search Bar */
@@ -80,7 +77,7 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 0;
+  height: 20vh;
 }
 
 /* Fish Cards */

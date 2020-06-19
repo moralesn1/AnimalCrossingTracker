@@ -51,7 +51,6 @@ export default function Input(props) {
           title="Enter a fish name"
           value={search}
         />
-        <button type="submit">Add Fish</button>
         <button onClick={handleClear}>Clear List</button>
       </div>
 
