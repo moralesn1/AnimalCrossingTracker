@@ -25,6 +25,10 @@ function App() {
     });
   }
 
+  function clearList() {
+    setFishList([]);
+  }
+
   function fishCardMap(item) {
     return (
       <FishCard
@@ -42,12 +46,16 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Container>
-        <Header />
-        <Input onAdd={addItem} />
-        <Row className="fish-data-row">{fishList.map(fishCardMap)} </Row>
-        <Footer />
-      </Container>
+      <div className="content">
+        <Container>
+          <Header />
+          <Input onAdd={addItem} onClear={clearList} />
+
+          <Row className="fish-data-row">{fishList.map(fishCardMap)} </Row>
+          <div className="content-space"></div>
+        </Container>
+      </div>
+      <Footer />
     </div>
   );
 }

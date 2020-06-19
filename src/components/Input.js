@@ -15,6 +15,12 @@ export default function Input(props) {
 
   function addFish(name) {
     props.onAdd(name);
+    setDisplay(false);
+    setSearch("");
+  }
+
+  function handleClear() {
+    props.onClear();
   }
 
   const fishList = fishData
@@ -39,13 +45,14 @@ export default function Input(props) {
     <div className="search-form">
       <div className="search-bar">
         <input
-          onInput={handleChange}
+          onChange={handleChange}
           type="text"
           placeholder="Search for fish..."
           title="Enter a fish name"
+          value={search}
         />
         <button type="submit">Add Fish</button>
-        <button>Clear List</button>
+        <button onClick={handleClear}>Clear List</button>
       </div>
 
       <div
