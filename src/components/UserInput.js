@@ -24,6 +24,10 @@ export default function UserInput(props) {
     props.onClear();
   }
 
+  function handleSort() {
+    props.onSort();
+  }
+
   const fishList = fishData
     .filter(({ name }) => name.toLocaleLowerCase().indexOf(search) > -1)
     .map((item, index) => {
@@ -62,6 +66,9 @@ export default function UserInput(props) {
       </div>
       <Button variant="danger" onClick={handleClear}>
         Clear List
+      </Button>
+      <Button variant="primary" onClick={handleSort}>
+        SORT
       </Button>
     </div>
   );

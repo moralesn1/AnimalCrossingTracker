@@ -14,6 +14,7 @@ import "../app.css";
 
 function App() {
   const [fishList, setFishList] = useState([]);
+  const [names, setNames] = useState([100, 10, 0, 5, 20]);
 
   function addItem(item) {
     setFishList((prevValue) => {
@@ -31,6 +32,14 @@ function App() {
 
   function clearList() {
     setFishList([]);
+  }
+
+  function sortFromLeastToMostExpensive() {
+    setFishList((prevValue) => {
+      return [...prevValue].sort((a, b) => {
+        return b.price - a.price;
+      });
+    });
   }
 
   function fishCardMap(item, index) {
@@ -55,7 +64,11 @@ function App() {
       <div className="content">
         <Container>
           <Header />
-          <UserInput onAdd={addItem} onClear={clearList} />
+          <UserInput
+            onAdd={addItem}
+            onClear={clearList}
+            onSort={sortFromLeastToMostExpensive}
+          />
         </Container>
         <Row className="fish-data-row">{fishList.map(fishCardMap)}</Row>
       </div>
