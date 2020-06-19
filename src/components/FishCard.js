@@ -1,7 +1,11 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
 export default function FishCard(props) {
+  function handleClick() {
+    props.onDelete(props.id);
+  }
+
   return (
     <>
       <Card style={{ width: "18rem" }}>
@@ -22,6 +26,9 @@ export default function FishCard(props) {
             <b>Months:</b> {props.month}
             <br />
           </Card.Text>
+          <Button variant="danger" onClick={handleClick}>
+            Remove
+          </Button>
         </Card.Body>
       </Card>
     </>

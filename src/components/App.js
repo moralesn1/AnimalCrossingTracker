@@ -5,12 +5,8 @@ import { Container, Row } from "react-bootstrap";
 
 import FishCard from "./FishCard";
 import Footer from "./Footer";
-import Input from "./Input";
+import UserInput from "./UserInput";
 import Header from "./Header";
-
-//DATA
-
-// import fishData from "../data/fishData";
 
 //CSS
 
@@ -25,14 +21,23 @@ function App() {
     });
   }
 
+  function removeItem(id) {
+    setFishList((prevValue) => {
+      return prevValue.filter((fishItem, index) => {
+        return index !== id;
+      });
+    });
+  }
+
   function clearList() {
     setFishList([]);
   }
 
-  function fishCardMap(item) {
+  function fishCardMap(item, index) {
     return (
       <FishCard
         key={item.name}
+        id={index}
         name={item.name}
         image={item.image}
         price={item.price}
@@ -40,6 +45,7 @@ function App() {
         size={item.size}
         time={item.time}
         month={item.month}
+        onDelete={removeItem}
       />
     );
   }
@@ -49,10 +55,9 @@ function App() {
       <div className="content">
         <Container>
           <Header />
-          <Input onAdd={addItem} onClear={clearList} />
-
-          <Row className="fish-data-row">{fishList.map(fishCardMap)} </Row>
+          <UserInput onAdd={addItem} onClear={clearList} />
         </Container>
+        <Row className="fish-data-row">{fishList.map(fishCardMap)}</Row>
       </div>
       <Footer />
     </div>

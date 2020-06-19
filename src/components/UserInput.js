@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { Button, Input } from "react-bootstrap";
 import fishData from "../data/fishData";
 
-export default function Input(props) {
+export default function UserInput(props) {
   const [display, setDisplay] = useState(false);
 
   const [search, setSearch] = useState("");
@@ -51,7 +52,6 @@ export default function Input(props) {
           title="Enter a fish name"
           value={search}
         />
-        <button onClick={handleClear}>Clear List</button>
       </div>
 
       <div
@@ -60,6 +60,9 @@ export default function Input(props) {
       >
         {display && fishList}
       </div>
+      <Button variant="danger" onClick={handleClear}>
+        Clear List
+      </Button>
     </div>
   );
 }
