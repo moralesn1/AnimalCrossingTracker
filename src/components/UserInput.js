@@ -64,12 +64,14 @@ export default function UserInput(props) {
       >
         {display && fishList}
       </div>
-      <Button variant="danger" onClick={handleClear}>
-        Clear List
-      </Button>
-      <Button variant="primary" onClick={handleSort}>
-        SORT
-      </Button>
+      <div className="button-options">
+        <Button variant="danger" onClick={handleClear}>
+          Clear List
+        </Button>
+        <Button variant="primary" onClick={handleSort}>
+          SORT
+        </Button>
+      </div>
     </div>
   );
 }

@@ -30,9 +30,17 @@ input {
 
 .search-bar {
   margin-top: 10px;
-  margin-bottom: 10px;
 }
 
+.button-options {
+  margin-top: 1em;
+}
+
+.btn-danger,
+.btn-primary {
+  margin-right: 5px;
+  margin-left: 5px;
+}
 /* Drop down of Search Box */
 
 .animal-search-box-option {
@@ -49,6 +57,7 @@ input {
   margin-right: auto;
   width: 100%;
   border-style: solid;
+  border-top: 0px;
   border-width: 1px;
   border-radius: 5px;
   background-color: white;
