@@ -4,7 +4,6 @@ import fishData from "../data/fishData";
 
 export default function UserInput(props) {
   const [display, setDisplay] = useState(false);
-
   const [search, setSearch] = useState("");
 
   function handleChange(event) {
@@ -29,12 +28,12 @@ export default function UserInput(props) {
   }
 
   function handleKeyPress(event) {
-    const keyPressed = event.key;
-    if (keyPressed === "Enter") {
+    const keyPress = event.key;
+    if (keyPress === "Enter") {
       console.log("enter");
-    } else if (keyPressed === "ArrowDown") {
+    } else if (keyPress === "ArrowDown") {
       console.log("down");
-    } else if (keyPressed === "ArrowUp") {
+    } else if (keyPress === "ArrowUp") {
       console.log("up");
     }
   }
@@ -43,7 +42,7 @@ export default function UserInput(props) {
     .filter(({ name }) => name.toLocaleLowerCase().indexOf(search) > -1)
     .map((item, index) => {
       return (
-        <div
+        <ul
           className="animal-search-box-option"
           onClick={() => {
             addFish(item);
@@ -51,10 +50,18 @@ export default function UserInput(props) {
           value={item.name}
           key={item.name}
           index={index}
+          onKeyPress={(e) => {
+            const keyPress = e.key;
+            if (keyPress === "Enter") {
+              addFish(item);
+            }
+            console.log(keyPress);
+          }}
+          tabIndex="0"
         >
           <span>{item.name}</span>
           <img src={item.image} alt={item.name}></img>
-        </div>
+        </ul>
       );
     });
 

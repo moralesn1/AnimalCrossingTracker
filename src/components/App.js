@@ -58,19 +58,7 @@ function App() {
     );
   }
 
-  function keyPress(e) {
-    // if (event.keyCode === 40) {
-    //   // down arrow press
-    //   console.log("lel");
-    // }
-    // if (event.keyCode === 38) {
-    //   // up arrow press
-    //   console.log("up");
-    // } else if (event.keyCode === 13) {
-    //   // enter key
-    //   addItem();
-    // }
-  }
+  function keyPress(e) {}
 
   return (
     <div className="wrapper">
