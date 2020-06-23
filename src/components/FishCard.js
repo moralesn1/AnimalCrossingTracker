@@ -23,8 +23,6 @@ export default function FishCard(props) {
             <br />
             <b>Time: </b> {props.time}
             <br />
-            <b>Months:</b> {props.month}
-            <br />
           </Card.Text>
           <Button variant="danger" onClick={handleClick}>
             Remove
