@@ -50,6 +50,10 @@ input {
   background-color: white;
 }
 
+.animal-search-box-option:hover {
+  background-color: rgb(206, 206, 206);
+}
+
 .animal-dropdown-search-box {
   height: 150px;
   overflow-y: scroll;

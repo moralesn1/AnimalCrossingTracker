@@ -15,7 +15,7 @@ export default function FishCard(props) {
             <h3>{props.name}</h3>
           </Card.Title>
           <Card.Text>
-            <b>Price:</b> {props.price}
+            <b>Price:</b> {props.price} Bells
             <br />
             <b>Location:</b> {props.location}
             <br />

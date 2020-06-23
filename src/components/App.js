@@ -14,7 +14,6 @@ import "../app.css";
 
 function App() {
   const [fishList, setFishList] = useState([]);
-  const [names, setNames] = useState([100, 10, 0, 5, 20]);
 
   function addItem(item) {
     setFishList((prevValue) => {
@@ -59,6 +58,20 @@ function App() {
     );
   }
 
+  function keyPress(e) {
+    // if (event.keyCode === 40) {
+    //   // down arrow press
+    //   console.log("lel");
+    // }
+    // if (event.keyCode === 38) {
+    //   // up arrow press
+    //   console.log("up");
+    // } else if (event.keyCode === 13) {
+    //   // enter key
+    //   addItem();
+    // }
+  }
+
   return (
     <div className="wrapper">
       <div className="content">
@@ -68,6 +81,7 @@ function App() {
             onAdd={addItem}
             onClear={clearList}
             onSort={sortFromLeastToMostExpensive}
+            onKeyDown={keyPress}
           />
         </Container>
         <Row className="fish-data-row">{fishList.map(fishCardMap)}</Row>

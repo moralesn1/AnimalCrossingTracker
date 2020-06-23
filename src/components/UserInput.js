@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Input } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import fishData from "../data/fishData";
 
 export default function UserInput(props) {
@@ -28,6 +28,17 @@ export default function UserInput(props) {
     props.onSort();
   }
 
+  function handleKeyPress(event) {
+    const keyPressed = event.key;
+    if (keyPressed === "Enter") {
+      console.log("enter");
+    } else if (keyPressed === "ArrowDown") {
+      console.log("down");
+    } else if (keyPressed === "ArrowUp") {
+      console.log("up");
+    }
+  }
+
   const fishList = fishData
     .filter(({ name }) => name.toLocaleLowerCase().indexOf(search) > -1)
     .map((item, index) => {
@@ -39,6 +50,7 @@ export default function UserInput(props) {
           }}
           value={item.name}
           key={item.name}
+          index={index}
         >
           <span>{item.name}</span>
           <img src={item.image} alt={item.name}></img>
@@ -55,6 +67,7 @@ export default function UserInput(props) {
           placeholder="Search for fish..."
           title="Enter a fish name"
           value={search}
+          onKeyDown={handleKeyPress}
         />
       </div>
 
