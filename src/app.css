@@ -1,4 +1,10 @@
-#root {
+#root,
+html {
+  height: 100%;
+  position: relative;
+}
+
+.wrapper {
   background-color: #eafcdc;
 }
 
@@ -9,19 +15,87 @@
   width: 50%;
 }
 
+.content {
+  min-height: 80vh;
+}
+
 /* Search Bar */
+
+input {
+  width: 100%;
+}
 .search-form {
   text-align: center;
+}
+
+.search-bar {
+  margin-top: 10px;
+}
+
+.button-options {
+  margin-top: 1em;
+}
+
+.btn-danger,
+.btn-primary {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+/* Drop down of Search Box */
+
+.animal-search-box-option {
+  border: 1px;
+  border-color: black;
+  border-style: solid;
+  background-color: white;
+}
+
+.animal-search-box-option:hover {
+  background-color: rgb(206, 206, 206);
+}
+
+.animal-dropdown-search-box {
+  height: 150px;
+  overflow-y: scroll;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border-style: solid;
+  border-top: 0px;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 1.5em;
+}
+
+.animal-dropdown-search-box::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+.animal-dropdown-search-box::-webkit-scrollbar {
+  width: 1.5em;
+}
+
+.animal-dropdown-search-box::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Footer */
 
 .footer {
-  text-align: center;
-  height: 100px;
-  margin-top: 50px;
+  background-color: white;
+  border-style: solid;
+  border-width: 2px 0px 0px 0px;
   padding-top: 3em;
   padding-bottom: 50px;
+  position: initial;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 20vh;
 }
 
 /* Fish Cards */
@@ -50,6 +124,10 @@ div.card {
 
 div.fish-data-row.row {
   justify-content: center;
+  background-color: #eafcdc;
+  position: relative;
+  padding-left: 5em;
+  padding-right: 5em;
 }
 
 img.card-img-top {
@@ -61,3 +139,5 @@ img.card-img-top {
   border-radius: 25px;
   background-color: lightskyblue;
 }
+
+/* Danger Button Search Bar */

@@ -1,7 +1,11 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
 export default function FishCard(props) {
+  function handleClick() {
+    props.onDelete(props.id);
+  }
+
   return (
     <>
       <Card style={{ width: "18rem" }}>
@@ -11,7 +15,7 @@ export default function FishCard(props) {
             <h3>{props.name}</h3>
           </Card.Title>
           <Card.Text>
-            <b>Price:</b> {props.price}
+            <b>Price:</b> {props.price} Bells
             <br />
             <b>Location:</b> {props.location}
             <br />
@@ -19,9 +23,10 @@ export default function FishCard(props) {
             <br />
             <b>Time: </b> {props.time}
             <br />
-            <b>Months:</b> {props.month}
-            <br />
           </Card.Text>
+          <Button variant="danger" onClick={handleClick}>
+            Remove
+          </Button>
         </Card.Body>
       </Card>
     </>
