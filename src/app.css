@@ -51,8 +51,10 @@ input {
   margin-bottom: 0px;
 }
 
-.animal-search-box-option:hover {
+.animal-search-box-option:hover,
+.animal-search-box-option:focus {
   background-color: rgb(206, 206, 206);
+  outline: none;
 }
 
 .animal-dropdown-search-box {
