@@ -40,6 +40,13 @@ input[type="submit"] {
   z-index: 1;
 }
 
+.autoSuggestionBox-notfound {
+  background-color: white;
+  border-style: solid;
+  border-width: 0px 1px 1px 1px;
+  border-color: black;
+}
+
 .search-bar {
   margin-top: 10px;
 }
@@ -56,12 +63,12 @@ input[type="submit"] {
 /* Drop down of Search Box */
 
 input[type="text"] {
-  width: 80%;
+  width: 100%;
   padding: 12px 20px;
   margin: 0px;
   box-sizing: border-box;
   border: 2px solid rgb(88, 88, 88);
-  border-radius: 5px 0px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 input:focus {
@@ -97,6 +104,10 @@ input:focus {
   right: 0;
   bottom: 0;
   height: 20vh;
+}
+
+.footer p.footer-copyright-notice {
+  font-size: 8px;
 }
 
 /* Fish Cards */

@@ -15,7 +15,7 @@ export default function UserInput(props) {
     const newInput = event.target.value;
 
     setDisplay(true);
-    setInputValue(newInput);
+    setInputValue(newInput.toLocaleLowerCase());
 
     if (newInput === "") {
       setSelectedIndex(0);
@@ -87,10 +87,13 @@ export default function UserInput(props) {
           onFocus={handleFocus}
         />
 
-        <input type="submit" value="Search" />
         <div className="autoSuggestionBox-container">
           {display && inputValue.length >= 1 && filteredFish.length === 0 ? (
-            <div className="autoSuggestionBox-nonefound"> No Results</div>
+            <div className="autoSuggestionBox">
+              <p>
+                <i>No results found...</i>
+              </p>
+            </div>
           ) : null}
           {display && inputValue.length >= 1 && filteredFish.length > 0
             ? filteredFish.map((item, index) => {
