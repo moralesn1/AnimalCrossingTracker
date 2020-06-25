@@ -152,7 +152,7 @@ const fishData = [
   },
   {
     image: popEyedGoldfishIMG,
-    name: "Pop-eyed Goldfsh",
+    name: "Pop-eyed Goldfish",
     price: 1300,
     location: "Pond",
     size: 1,

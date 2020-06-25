@@ -1,23 +1,18 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import fishData from "../data/fishData";
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 
 export default function UserInput(props) {
-  const [display, setDisplay] = useState(false);
-
-  const [search, setSearch] = useState("");
-
-  function handleChange(event) {
-    const inputValue = event.target.value;
-    inputValue === "" ? setDisplay(false) : setDisplay(true);
-
-    setSearch(inputValue);
-  }
+  const [inputValue, setInputValue] = useState("");
 
   function addFish(name) {
     props.onAdd(name);
-    setDisplay(false);
-    setSearch("");
+  }
+
+  function addItem(name) {
+    props.onAdd(name);
   }
 
   function handleClear() {
@@ -28,55 +23,46 @@ export default function UserInput(props) {
     props.onSort();
   }
 
-  function handleKeyPress(event) {
-    const keyPressed = event.key;
-    if (keyPressed === "Enter") {
-      console.log("enter");
-    } else if (keyPressed === "ArrowDown") {
-      console.log("down");
-    } else if (keyPressed === "ArrowUp") {
-      console.log("up");
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      console.log("kek");
+      console.log(inputValue);
+      console.log(event);
+      addItem(inputValue);
+      setInputValue("");
     }
   }
 
-  const fishList = fishData
-    .filter(({ name }) => name.toLocaleLowerCase().indexOf(search) > -1)
-    .map((item, index) => {
-      return (
-        <div
-          className="animal-search-box-option"
-          onClick={() => {
-            addFish(item);
-          }}
-          value={item.name}
-          key={item.name}
-          index={index}
-        >
-          <span>{item.name}</span>
-          <img src={item.image} alt={item.name}></img>
-        </div>
-      );
-    });
-
   return (
     <div className="search-form">
-      <div className="search-bar">
-        <input
-          onChange={handleChange}
-          type="text"
-          placeholder="Search for fish..."
-          title="Enter a fish name"
-          value={search}
-          onKeyDown={handleKeyPress}
-        />
-      </div>
+      <Autocomplete
+        clearOnBlur
+        clearOnEscape
+        id="autocomplete-search-box"
+        options={fishData}
+        onKeyDown={handleKeyDown}
+        getOptionLabel={(option) => option.name}
+        renderOption={(option) => (
+          <div
+            onClick={() => {
+              addItem(option);
+              console.log(option);
+            }}
+          >
+            <img src={option.image} alt={option.name}></img>
+            {option.name}
+          </div>
+        )}
+        style={{ width: 500 }}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label="Search for a creature..."
+            variant="outlined"
+          />
+        )}
+      />
 
-      <div
-        className="animal-dropdown-search-box"
-        style={{ display: display ? "block" : "none" }}
-      >
-        {display && fishList}
-      </div>
       <div className="button-options">
         <Button variant="danger" onClick={handleClear}>
           Clear List

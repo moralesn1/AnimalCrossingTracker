@@ -5,7 +5,8 @@ import { Container, Row } from "react-bootstrap";
 
 import FishCard from "./FishCard";
 import Footer from "./Footer";
-import UserInput from "./UserInput";
+// import UserInput from "./UserInput";
+import UserInputv2 from "./UserInputv2";
 import Header from "./Header";
 
 //CSS
@@ -14,17 +15,20 @@ import "../app.css";
 
 function App() {
   const [fishList, setFishList] = useState([]);
+  const [lastId, setLastId] = useState(1);
 
   function addItem(item) {
+    const newItem = { ...item, id: lastId };
+    setLastId(lastId + 1);
     setFishList((prevValue) => {
-      return [...prevValue, item];
+      return [...prevValue, newItem];
     });
   }
 
   function removeItem(id) {
     setFishList((prevValue) => {
-      return prevValue.filter((fishItem, index) => {
-        return index !== id;
+      return prevValue.filter((fishItem) => {
+        return fishItem.id !== id;
       });
     });
   }
@@ -32,20 +36,16 @@ function App() {
   function clearList() {
     setFishList([]);
   }
-
-  function sortFromLeastToMostExpensive() {
-    setFishList((prevValue) => {
-      return [...prevValue].sort((a, b) => {
-        return b.price - a.price;
-      });
-    });
-  }
+  const fishByValue = fishList.sort((a, b) => {
+    return b.price - a.price;
+  });
 
   function fishCardMap(item, index) {
+    console.log(item.id);
     return (
       <FishCard
-        key={item.name}
-        id={index}
+        key={item.id}
+        id={item.id}
         name={item.name}
         image={item.image}
         price={item.price}
@@ -58,33 +58,14 @@ function App() {
     );
   }
 
-  function keyPress(e) {
-    // if (event.keyCode === 40) {
-    //   // down arrow press
-    //   console.log("lel");
-    // }
-    // if (event.keyCode === 38) {
-    //   // up arrow press
-    //   console.log("up");
-    // } else if (event.keyCode === 13) {
-    //   // enter key
-    //   addItem();
-    // }
-  }
-
   return (
     <div className="wrapper">
       <div className="content">
         <Container>
           <Header />
-          <UserInput
-            onAdd={addItem}
-            onClear={clearList}
-            onSort={sortFromLeastToMostExpensive}
-            onKeyDown={keyPress}
-          />
+          <UserInputv2 onAdd={addItem} onClear={clearList} />
         </Container>
-        <Row className="fish-data-row">{fishList.map(fishCardMap)}</Row>
+        <Row className="fish-data-row">{fishByValue.map(fishCardMap)}</Row>
       </div>
       <Footer />
     </div>
