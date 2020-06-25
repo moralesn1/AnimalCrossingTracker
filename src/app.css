@@ -21,11 +21,23 @@ html {
 
 /* Search Bar */
 
-input {
-  width: 100%;
+input[type="submit"] {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 0px;
+  box-sizing: border-box;
+  border: 2px solid rgb(88, 88, 88);
+  border-radius: 0px 5px 0px 0px;
 }
 .search-form {
+  position: relative;
   text-align: center;
+}
+
+.autoSuggestionBox-container {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 }
 
 .search-bar {
@@ -43,45 +55,31 @@ input {
 }
 /* Drop down of Search Box */
 
+input[type="text"] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 0px;
+  box-sizing: border-box;
+  border: 2px solid rgb(88, 88, 88);
+  border-radius: 5px 0px 0px 0px;
+}
+
+input:focus {
+  outline: none;
+}
+.autoSuggestionBox {
+  background-color: white;
+  border-style: solid;
+  border-width: 0px 1px 1px 1px;
+  border-color: black;
+}
+
 .animal-search-box-option {
   border: 1px;
   border-color: black;
   border-style: solid;
   background-color: white;
   margin-bottom: 0px;
-}
-
-.animal-search-box-option:hover,
-.animal-search-box-option:focus {
-  background-color: rgb(206, 206, 206);
-  outline: none;
-}
-
-.animal-dropdown-search-box {
-  height: 150px;
-  overflow-y: scroll;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  border-style: solid;
-  border-top: 0px;
-  border-width: 1px;
-  border-radius: 5px;
-  background-color: white;
-  margin-bottom: 1.5em;
-}
-
-.animal-dropdown-search-box::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
-}
-.animal-dropdown-search-box::-webkit-scrollbar {
-  width: 1.5em;
-}
-
-.animal-dropdown-search-box::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Footer */
