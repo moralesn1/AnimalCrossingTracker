@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 
 // COMPONENTS
@@ -16,6 +16,16 @@ import "../app.css";
 function App() {
   const [fishList, setFishList] = useState([]);
   const [lastId, setLastId] = useState(1);
+
+  useEffect(() => {
+    fishData();
+  }, []);
+
+  const fishData = async () => {
+    const response = await fetch(`https://acnhapi.com/v1/fish/1`);
+    const data = await response.json();
+    console.log(data);
+  };
 
   function addItem(item) {
     const newItem = { ...item, id: lastId };
