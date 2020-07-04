@@ -16,15 +16,19 @@ import "../app.css";
 function App() {
   const [fishList, setFishList] = useState([]);
   const [lastId, setLastId] = useState(1);
+  const [creatureList, setCreatureList] = useState([]);
 
   useEffect(() => {
-    fishData();
+    creatureData();
   }, []);
 
-  const fishData = async () => {
-    const response = await fetch(`https://acnhapi.com/v1/fish/1`);
-    const data = await response.json();
-    console.log(data);
+  const creatureData = async () => {
+    const fish = await fetch("https://acnhapi.com/v1/fish/");
+    const bugs = await fetch("https://acnhapi.com/v1/bugs/");
+    const creatures = await (fish, bugs).json();
+    const creaturesArray = Object.keys(creatures).map((i) => creatures[i]);
+    console.log(creaturesArray);
+    setCreatureList(creaturesArray);
   };
 
   function addItem(item) {
@@ -51,7 +55,6 @@ function App() {
   });
 
   function fishCardMap(item, index) {
-    console.log(item.id);
     return (
       <FishCard
         key={item.id}
@@ -77,6 +80,15 @@ function App() {
         </Container>
         <Row className="fish-data-row">{fishByValue.map(fishCardMap)}</Row>
       </div>
+      {creatureList.map((value) => {
+        return (
+          <div>
+            <div>{value.name["name-USen"]}</div>
+            <img src={value["icon_uri"]} />
+          </div>
+        );
+      })}
+
       <Footer />
     </div>
   );
