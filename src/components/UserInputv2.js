@@ -115,7 +115,11 @@ export default function UserInput(props) {
                       style={{ backgroundColor: "grey" }}
                     >
                       {capitalise(item.name)}
-                      <img src={item.image} alt={item.name} />
+                      <img
+                        className="autoSuggestionBox-img"
+                        src={item.image}
+                        alt={item.name}
+                      />
                     </div>
                   );
                 }
@@ -135,7 +139,11 @@ export default function UserInput(props) {
                   >
                     {capitalise(item.name)}
 
-                    <img src={item.image} alt={item.name} />
+                    <img
+                      className="autoSuggestionBox-img"
+                      src={item.image}
+                      alt={item.name}
+                    />
                   </div>
                 );
               })
