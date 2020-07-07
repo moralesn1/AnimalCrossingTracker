@@ -15,13 +15,15 @@ export default function FishCard(props) {
             <h3>{props.name}</h3>
           </Card.Title>
           <Card.Text>
-            <b>Price:</b> {props.price} Bells
+            <b>Price:</b> {props.price} bells
+            <br />
+            <b>CJ's or Flick's Price:</b> {props.impPrice} bells
             <br />
             <b>Location:</b> {props.location}
             <br />
-            <b>Shadow Size:</b> {props.size}
+            <b>Shadow Size:</b> {props.size || "N/A"}
             <br />
-            <b>Time: </b> {props.time}
+            <b>Rarity: </b> {props.rarity}
             <br />
           </Card.Text>
           <Button variant="danger" onClick={handleClick}>

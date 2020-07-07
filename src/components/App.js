@@ -25,10 +25,21 @@ function App() {
   const creatureData = async () => {
     const fish = await fetch("https://acnhapi.com/v1/fish/");
     const bugs = await fetch("https://acnhapi.com/v1/bugs/");
-    const creatures = await (fish, bugs).json();
-    const creaturesArray = Object.keys(creatures).map((i) => creatures[i]);
-    console.log(creaturesArray);
-    setCreatureList(creaturesArray);
+    const fishData = await fish.json();
+    const bugData = await bugs.json();
+    const creatures = { ...fishData, ...bugData };
+    const normalisedCreatures = Object.entries(creatures).map(([name, obj]) => {
+      return {
+        ...obj,
+        name: obj.name["name-USen"],
+        location: obj.availability.location,
+        image: obj.icon_uri,
+        size: obj.shadow,
+        rarity: obj.availability.rarity,
+      };
+    });
+
+    setCreatureList(normalisedCreatures);
   };
 
   function addItem(item) {
@@ -55,17 +66,27 @@ function App() {
   });
 
   function fishCardMap(item, index) {
+    const capitalise = (str1) => {
+      return str1.charAt(0).toUpperCase() + str1.slice(1);
+    };
+
+    const improvedPrice = (price) => {
+      return price * 1.5;
+    };
+
     return (
       <FishCard
         key={item.id}
         id={item.id}
-        name={item.name}
+        name={capitalise(item.name)}
         image={item.image}
         price={item.price}
+        impPrice={improvedPrice(item.price)}
         location={item.location}
         size={item.size}
         time={item.time}
         month={item.month}
+        rarity={item.rarity}
         onDelete={removeItem}
       />
     );
@@ -76,18 +97,14 @@ function App() {
       <div className="content">
         <Container>
           <Header />
-          <UserInputv2 onAdd={addItem} onClear={clearList} />
+          <UserInputv2
+            onAdd={addItem}
+            onClear={clearList}
+            fishData={creatureList}
+          />
         </Container>
         <Row className="fish-data-row">{fishByValue.map(fishCardMap)}</Row>
       </div>
-      {creatureList.map((value) => {
-        return (
-          <div>
-            <div>{value.name["name-USen"]}</div>
-            <img src={value["icon_uri"]} />
-          </div>
-        );
-      })}
 
       <Footer />
     </div>

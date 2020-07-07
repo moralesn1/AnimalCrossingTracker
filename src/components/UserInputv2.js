@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import fishData from "../data/fishData";
+// import fishData from "../data/fishData";
 
 export default function UserInput(props) {
   const [inputValue, setInputValue] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [display, setDisplay] = useState(true);
-
+  const fishData = props.fishData;
   function addItem(name) {
     props.onAdd(name);
   }
@@ -74,6 +74,10 @@ export default function UserInput(props) {
     setDisplay(true);
   }
 
+  const capitalise = (str1) => {
+    return str1.charAt(0).toUpperCase() + str1.slice(1);
+  };
+
   return (
     <div className="search-form">
       <form onSubmit={handleSubmit}>
@@ -107,10 +111,10 @@ export default function UserInput(props) {
                         setInputValue("");
                       }}
                       tabIndex={selectedIndex}
-                      key={item.name}
+                      key={capitalise(item.name)}
                       style={{ backgroundColor: "grey" }}
                     >
-                      {item.name}
+                      {capitalise(item.name)}
                       <img src={item.image} alt={item.name} />
                     </div>
                   );
@@ -129,7 +133,7 @@ export default function UserInput(props) {
                       handleMouseEnter(index);
                     }}
                   >
-                    {item.name}
+                    {capitalise(item.name)}
 
                     <img src={item.image} alt={item.name} />
                   </div>
