@@ -102,8 +102,8 @@ function App() {
             onClear={clearList}
             fishData={creatureList}
           />
+          <Row className="fish-data-row">{fishByValue.map(fishCardMap)}</Row>
         </Container>
-        <Row className="fish-data-row">{fishByValue.map(fishCardMap)}</Row>
       </div>
 
       <Footer />

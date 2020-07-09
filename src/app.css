@@ -179,4 +179,11 @@ img.card-img-top {
     max-height: 200px;
     max-width: 200px;
   }
+  .card-title.h5 h3 {
+    font-size: 20px;
+  }
+  div.fish-data-row.row {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
 }
