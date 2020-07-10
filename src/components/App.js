@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Button } from "react-bootstrap";
 
 // COMPONENTS
 
@@ -102,6 +102,13 @@ function App() {
             onClear={clearList}
             fishData={creatureList}
           />
+          {fishList.length > 0 ? (
+            <div className="button-options">
+              <Button variant="danger" onClick={clearList}>
+                Clear List
+              </Button>
+            </div>
+          ) : null}
           <Row className="fish-data-row">{fishByValue.map(fishCardMap)}</Row>
         </Container>
       </div>

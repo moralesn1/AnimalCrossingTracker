@@ -150,11 +150,11 @@ export default function UserInput(props) {
             : null}
         </div>
       </form>
-      <div className="button-options">
+      {/* <div className="button-options">
         <Button variant="danger" onClick={handleClear}>
           Clear List
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 }

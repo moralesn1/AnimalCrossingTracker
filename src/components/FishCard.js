@@ -8,7 +8,7 @@ export default function FishCard(props) {
 
   return (
     <>
-      <Card style={{ width: "18rem" }}>
+      <Card>
         <Card.Img variant="top" src={props.image} />
         <Card.Body>
           <Card.Title>

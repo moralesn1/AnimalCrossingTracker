@@ -4,22 +4,26 @@ export default function Footer() {
   const currentyear = new Date().getFullYear();
   return (
     <div className="footer">
-      <p>
-        Created by{" "}
-        <b>
-          <a
-            href="https://moralesn1.github.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nathaniel{" "}
-          </a>
-        </b>
-        <span>&#169;</span> {currentyear}
-      </p>
-      <p>Artwork by Cherrie T</p>
+      <div className="footer-credits">
+        <p className="footer-credits-creator">
+          Created by{" "}
+          <b>
+            <a
+              href="https://moralesn1.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Nathaniel{" "}
+            </a>
+          </b>
+          <span>&#169;</span> {currentyear}
+        </p>
+        <p className="footer-credits-artworkcreator">
+          Artwork by Cherie T <span>&#169;</span>
+        </p>
+      </div>
 
-      <p>
+      <p className="footer-note-donate">
         Enjoyed this application? Feel free to buy me a coffee or donate
         directly to my{" "}
         <b>
@@ -31,9 +35,8 @@ export default function Footer() {
             Paypal
           </a>
         </b>
+        .
       </p>
-
-      <br></br>
       <p className="footer-copyright-notice">
         Special thanks to{" "}
         <b>

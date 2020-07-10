@@ -4,10 +4,11 @@
 html {
   height: 100%;
   position: relative;
-}
-
-.wrapper {
-  background-color: #eafcdc;
+  background: radial-gradient(
+    circle,
+    rgba(245, 245, 220, 1) 39%,
+    rgba(246, 246, 205, 1) 53%
+  );
 }
 
 .hero-image {
@@ -37,6 +38,7 @@ h3 {
 }
 .content {
   min-height: 75vh;
+  margin-bottom: 3em;
 }
 
 /* Search Bar */
@@ -73,6 +75,7 @@ input[type="submit"] {
 
 .button-options {
   margin-top: 1em;
+  text-align: center;
 }
 
 .btn-danger,
@@ -106,27 +109,6 @@ input:focus {
   width: 50px;
 }
 
-/* Footer */
-
-.footer {
-  background-color: white;
-  border-style: solid;
-  border-width: 2px 0px 0px 0px;
-  padding-top: 3em;
-  padding-bottom: 50px;
-  position: initial;
-  width: 100%;
-  text-align: center;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 20vh;
-}
-
-.footer p.footer-copyright-notice {
-  font-size: 10px;
-}
-
 /* Fish Cards */
 
 .card {
@@ -135,6 +117,7 @@ input:focus {
 }
 
 div.card {
+  width: 16rem;
   border-radius: 25px;
   border-color: black;
   border-width: 2px;
@@ -153,10 +136,7 @@ div.card {
 
 div.fish-data-row.row {
   justify-content: center;
-  background-color: #eafcdc;
   position: relative;
-  padding-left: 5em;
-  padding-right: 5em;
 }
 
 img.card-img-top {
@@ -167,6 +147,33 @@ img.card-img-top {
   border-width: 2px;
   border-radius: 25px;
   background-color: rgb(240, 240, 240);
+}
+
+/* Footer */
+
+.footer {
+  background-color: rgba(255, 255, 255, 0.733);
+  border-style: solid;
+  border-width: 2px 0px 0px 0px;
+  padding-top: 2em;
+  padding-bottom: 3em;
+  position: initial;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+}
+
+p.footer-credits-creator {
+  margin-bottom: 0px;
+}
+
+.footer p.footer-note-donate {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.footer p.footer-copyright-notice {
+  font-size: 12px;
 }
 
 /* Media Queries */
@@ -182,8 +189,17 @@ img.card-img-top {
   .card-title.h5 h3 {
     font-size: 20px;
   }
+  p.card-text {
+    font-size: 15px;
+  }
   div.fish-data-row.row {
     padding-left: 1.5em;
     padding-right: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  div.card {
+    width: 18rem;
   }
 }
