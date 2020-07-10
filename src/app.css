@@ -4,11 +4,7 @@
 html {
   height: 100%;
   position: relative;
-  background: radial-gradient(
-    circle,
-    rgba(245, 245, 220, 1) 39%,
-    rgba(246, 246, 205, 1) 53%
-  );
+  background: rgb(245, 245, 220);
 }
 
 .hero-image {
