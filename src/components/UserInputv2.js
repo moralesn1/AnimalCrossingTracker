@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
-// import fishData from "../data/fishData";
 
 export default function UserInput(props) {
   const [inputValue, setInputValue] = useState("");
@@ -20,10 +18,6 @@ export default function UserInput(props) {
     if (newInput === "") {
       setSelectedIndex(0);
     }
-  }
-
-  function handleClear() {
-    props.onClear();
   }
 
   const filteredFish = fishData
@@ -150,11 +144,6 @@ export default function UserInput(props) {
             : null}
         </div>
       </form>
-      {/* <div className="button-options">
-        <Button variant="danger" onClick={handleClear}>
-          Clear List
-        </Button>
-      </div> */}
     </div>
   );
 }
