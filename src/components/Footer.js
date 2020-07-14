@@ -20,14 +20,16 @@ export default function Footer() {
         </p>
         <p className="footer-credits-artworkcreator">
           Artwork by{" "}
-          <a
-            href="https://www.instagram.com/_confuzzios"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Cherie T{" "}
-          </a>
-          <span>&#169;</span>
+          <b>
+            <a
+              href="https://www.instagram.com/_confuzzios"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Cherie T{" "}
+            </a>
+          </b>
+          <span>&#169;</span> {currentyear}
         </p>
       </div>
 

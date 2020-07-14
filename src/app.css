@@ -148,15 +148,15 @@ img.card-img-top {
 /* Footer */
 
 .footer {
-  background-color: rgba(255, 255, 255, 0.733);
+  background: rgba(255, 255, 255, 0.733);
   border-style: solid;
   border-width: 2px 0px 0px 0px;
   padding-top: 2em;
   padding-bottom: 3em;
-  position: initial;
+  position: absolute;
   width: 100%;
   text-align: center;
-  height: 100%;
+  max-height: 30vh;
 }
 
 p.footer-credits-creator {
