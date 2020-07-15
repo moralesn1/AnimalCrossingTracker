@@ -25,14 +25,18 @@ function App() {
   const creatureData = async () => {
     const fish = await fetch("https://acnhapi.com/v1/fish/");
     const bugs = await fetch("https://acnhapi.com/v1/bugs/");
+    const seaCreatures = await fetch("http://acnhapi.com/v1/sea/");
     const fishData = await fish.json();
     const bugData = await bugs.json();
-    const creatures = { ...fishData, ...bugData };
+    const seaCreaturesData = await seaCreatures.json();
+    const creatures = { ...fishData, ...bugData, ...seaCreaturesData };
     const normalisedCreatures = Object.entries(creatures).map(([name, obj]) => {
       return {
         ...obj,
         name: obj.name["name-USen"],
         location: obj.availability.location,
+        priceCJ: obj["price-cj"],
+        priceFlick: obj["price-flick"],
         image: obj.icon_uri,
         size: obj.shadow,
         rarity: obj.availability.rarity,
@@ -81,6 +85,8 @@ function App() {
         name={capitalise(item.name)}
         image={item.image}
         price={item.price}
+        priceCJ={item.priceCJ}
+        priceFlick={item.priceFlick}
         impPrice={improvedPrice(item.price)}
         location={item.location}
         size={item.size}

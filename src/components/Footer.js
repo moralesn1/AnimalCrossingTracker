@@ -31,36 +31,36 @@ export default function Footer() {
           </b>
           <span>&#169;</span> {currentyear}
         </p>
-      </div>
 
-      <p className="footer-note-donate">
-        Enjoyed this application? Feel free to buy me a coffee or donate
-        directly to my{" "}
-        <b>
-          <a
-            href="https://paypal.me/vendrak"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Paypal
-          </a>
-        </b>
-        .
-      </p>
-      <p className="footer-copyright-notice">
-        Special thanks to{" "}
-        <b>
-          <a
-            href="http://acnhapi.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ANCH API
-          </a>{" "}
-        </b>
-        for creating such a wonderful API.
-        <br />
-      </p>
+        <p className="footer-note-donate">
+          Enjoyed this application? Feel free to buy me a coffee or donate
+          directly to my{" "}
+          <b>
+            <a
+              href="https://paypal.me/vendrak"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Paypal
+            </a>
+          </b>
+          .
+        </p>
+        <p className="footer-copyright-notice">
+          Special thanks to{" "}
+          <b>
+            <a
+              href="http://acnhapi.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ANCH API
+            </a>{" "}
+          </b>
+          for creating such a wonderful API.
+          <br />
+        </p>
+      </div>
     </div>
   );
 }
