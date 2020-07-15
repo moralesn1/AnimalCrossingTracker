@@ -25,7 +25,7 @@ function App() {
   const creatureData = async () => {
     const fish = await fetch("https://acnhapi.com/v1/fish/");
     const bugs = await fetch("https://acnhapi.com/v1/bugs/");
-    const seaCreatures = await fetch("http://acnhapi.com/v1/sea/");
+    const seaCreatures = await fetch("https://acnhapi.com/v1/sea/");
     const fishData = await fish.json();
     const bugData = await bugs.json();
     const seaCreaturesData = await seaCreatures.json();
