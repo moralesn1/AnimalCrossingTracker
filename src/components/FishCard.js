@@ -6,6 +6,49 @@ export default function FishCard(props) {
     props.onDelete(props.id);
   }
 
+  function priceCurrencyTitle() {
+    if (props.priceCJ) {
+      return (
+        <>
+          <b>CJ's Price: </b>
+          {props.priceCJ} bells <br />
+        </>
+      );
+    } else if (props.priceFlick) {
+      return (
+        <>
+          <b>Flick's Price:</b> {props.priceFlick} bells <br />
+        </>
+      );
+    } else {
+      return null;
+    }
+  }
+
+  function sizeCheck() {
+    if (props.size) {
+      return (
+        <>
+          <b>Shadow Size: </b> {props.size} <br />
+        </>
+      );
+    } else {
+      return null;
+    }
+  }
+
+  function rarityCheck() {
+    if (props.rarity) {
+      return (
+        <>
+          <b>Rarity: </b> {props.rarity}
+        </>
+      );
+    } else {
+      return null;
+    }
+  }
+
   return (
     <>
       <Card>
@@ -17,16 +60,17 @@ export default function FishCard(props) {
           <Card.Text>
             <b>Price:</b> {props.price} bells
             <br />
-            <b>CJ's or Flick's Price:</b> {props.impPrice} bells
+            {priceCurrencyTitle(props.priceCJ || props.priceFlick)}
+            <b>Location:</b> {props.location || "Diving"}
             <br />
-            <b>Location:</b> {props.location}
-            <br />
-            <b>Shadow Size:</b> {props.size || "N/A"}
-            <br />
-            <b>Rarity: </b> {props.rarity}
-            <br />
+            {sizeCheck(props.size)}
+            {rarityCheck(props.rarity)}
           </Card.Text>
-          <Button variant="danger" onClick={handleClick}>
+          <Button
+            variant="danger"
+            className="remove-critter"
+            onClick={handleClick}
+          >
             Remove
           </Button>
         </Card.Body>

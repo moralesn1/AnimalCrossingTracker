@@ -74,6 +74,11 @@ input[type="submit"] {
   text-align: center;
 }
 
+button.remove-critter.btn.btn-danger {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
 .btn-danger,
 .btn-primary {
   margin-right: 5px;
@@ -124,10 +129,16 @@ div.card {
 
 .card-body {
   width: 100%;
+  display: table-cell;
+  vertical-align: bottom;
 }
 
 .card-title {
   text-align: center;
+}
+
+p.card-text {
+  height: 144px;
 }
 
 div.fish-data-row.row {
@@ -148,15 +159,20 @@ img.card-img-top {
 /* Footer */
 
 .footer {
-  background-color: rgba(255, 255, 255, 0.733);
+  background: rgba(255, 255, 255, 0.733);
   border-style: solid;
   border-width: 2px 0px 0px 0px;
   padding-top: 2em;
   padding-bottom: 3em;
-  position: initial;
+  position: absolute;
   width: 100%;
   text-align: center;
-  height: 100%;
+  max-height: 30vh;
+  height: 25em;
+}
+
+.footer-credits {
+  margin: auto;
 }
 
 p.footer-credits-creator {
