@@ -9,7 +9,7 @@ export default function Footer() {
           Created by{" "}
           <b>
             <a
-              href="https://wwww.nathanielmdev.com"
+              href="https://www.nathanielmdev.com"
               target="_blank"
               rel="noopener noreferrer"
             >
