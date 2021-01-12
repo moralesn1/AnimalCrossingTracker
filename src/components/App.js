@@ -108,6 +108,8 @@ function App() {
             onClear={clearList}
             fishData={creatureList}
           />
+
+          <Row className="fish-data-row">{fishByValue.map(fishCardMap)}</Row>
           {fishList.length > 0 ? (
             <div className="button-options">
               <Button variant="danger" onClick={clearList}>
@@ -115,7 +117,6 @@ function App() {
               </Button>
             </div>
           ) : null}
-          <Row className="fish-data-row">{fishByValue.map(fishCardMap)}</Row>
         </Container>
       </div>
 
